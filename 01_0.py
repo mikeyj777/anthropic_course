@@ -27,7 +27,41 @@ SYSTEM_PROMPT = "Your answer should always be a series of critical thinking ques
 # Prompt
 PROMPT = "Why is the sky blue?"
 
-# Print Claude's response
-ans = get_completion(PROMPT, SYSTEM_PROMPT)
+# # Print Claude's response
+# ans = get_completion(PROMPT, SYSTEM_PROMPT)
 
-print(ans)
+# print(ans)
+
+# Prompt - this is the only field you should change
+PROMPT = "display the integers from 1 to 3 inclusive.  provide no other data but the numbers"
+
+# Get Claude's response
+# response = get_completion(PROMPT)
+
+# # Function to grade exercise correctness
+# def grade_exercise(text):
+#     pattern = re.compile(r'^(?=.*1)(?=.*2)(?=.*3).*$', re.DOTALL)
+#     return bool(pattern.match(text))
+
+# # Print Claude's response and the corresponding grade
+# print(response)
+# print("\n--------------------------- GRADING ---------------------------")
+# print("This exercise has been correctly solved:", grade_exercise(response))
+
+SYSTEM_PROMPT = 'Your answers should emulate those of a 3 year old child'
+
+# Prompt
+PROMPT = "How big is the sky?"
+
+# Get Claude's response
+response = get_completion(PROMPT, SYSTEM_PROMPT)
+
+# Function to grade exercise correctness
+def grade_exercise(text):
+    return bool(re.search(r"giggles", text) or re.search(r"soo", text))
+
+# Print Claude's response and the corresponding grade
+print(response)
+print("\n--------------------------- GRADING ---------------------------")
+print("This exercise has been correctly solved:", grade_exercise(response))
+
