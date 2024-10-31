@@ -24,3 +24,4 @@ model_runs_from_json_output
 model_run_output
 diagnostics
 data.*
+data
